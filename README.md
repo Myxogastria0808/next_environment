@@ -2,7 +2,7 @@
 
 ## 参考サイト URL
 
-[https://zenn.dev/brachio_takumi/articles/a8fecd8b1b2742](https://zenn.dev/brachio_takumi/articles/a8fecd8b1b2742)
+[https://zenn.dev/brachio\_takumi/articles/a8fecd8b1b2742](https://zenn.dev/brachio\_takumi/articles/a8fecd8b1b2742)
 
 ```bash
 npx create-next-app@latest --ts
@@ -123,6 +123,22 @@ public/
 ## `package.json`
 
 ```json
+    "scripts": {
+        "prepare": "husky install",
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "format": "prettier --write \"./**/*.{js, ts, tsx, jsx}\"",
+        "lint-fix": "prettier --write \"./**/*.{js, ts, tsx, jsx}\" && eslint --fix --ext .jsx,.js,.tsx,.ts .",
+        "lint": "prettier --check \"./**/*.{js, ts, tsx, jsx}\" && eslint --ext .jsx,.js,.tsx,.ts ."
+    },
+    "lint-staged": {
+        "*.{js, ts, jsx, tsx}": [
+            "yarn prettier --write \"./**/*.{js, ts, tsx, jsx}\"",
+            "yarn prettier --check \"./**/*.{js, ts, tsx, jsx}\"",
+            "yarn eslint --fix --ext .jsx,.js,.tsx,.ts ."
+        ]
+    },
 ```
 
 ***
@@ -302,10 +318,20 @@ npx husky set .husky/pre-commit "npx lint-staged"
 ## `package.json`
 
 ```json
-    "script": {
-        "prepare": "husky install"
-    }
+    "scripts": {
+        "prepare": "husky install",
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "format": "prettier --write \"./**/*.{js, ts, tsx, jsx}\"",
+        "lint-fix": "prettier --write \"./**/*.{js, ts, tsx, jsx}\" && eslint --fix --ext .jsx,.js,.tsx,.ts .",
+        "lint": "prettier --check \"./**/*.{js, ts, tsx, jsx}\" && eslint --ext .jsx,.js,.tsx,.ts ."
+    },
+    "lint-staged": {
+        "*.{js, ts, jsx, tsx}": [
+            "yarn prettier --write \"./**/*.{js, ts, tsx, jsx}\"",
+            "yarn prettier --check \"./**/*.{js, ts, tsx, jsx}\"",
+            "yarn eslint --fix --ext .jsx,.js,.tsx,.ts ."
+        ]
+    },
 ```
-
-
-

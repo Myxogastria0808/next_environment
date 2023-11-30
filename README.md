@@ -2,7 +2,7 @@
 
 ## 参考サイト URL
 
-{% embed url="https://zenn.dev/brachio_takumi/articles/a8fecd8b1b2742" %}
+[https://zenn.dev/brachio_takumi/articles/a8fecd8b1b2742](https://zenn.dev/brachio_takumi/articles/a8fecd8b1b2742)
 
 ```bash
 npx create-next-app@latest --ts
